@@ -1,0 +1,31 @@
+[gd_scene format=2]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+
+[node name="Timer" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 14.0
+text = "Timer"
+align = 1
+valign = 1
+
+[node name="NutInfo" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Carrying" type="Label" parent="NutInfo"]
+margin_right = 67.0
+margin_bottom = 14.0
+text = "Carrying: 0"
+
+[node name="Storage" type="Label" parent="NutInfo"]
+margin_top = 18.0
+margin_right = 67.0
+margin_bottom = 32.0
+text = "Storage: 0"

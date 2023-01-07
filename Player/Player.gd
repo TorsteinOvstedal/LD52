@@ -39,6 +39,7 @@ func _process(_delta):
 		look_at(global_transform.origin + _direction, Vector3.UP)
 
 func _physics_process(delta):
+	#_direction.y = -9.8 * 10
 	_velocity = _direction * speed * delta
 	move_and_slide(_velocity, Vector3.UP)
 	

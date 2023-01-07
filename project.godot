@@ -9,26 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody",
+"base": "Spatial",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Levels/Level.gd"
+}, {
+"base": "Area",
 "class": "Nut",
 "language": "GDScript",
-"path": "res://prototype/Nut.gd"
+"path": "res://Environmnent/Nut.gd"
+}, {
+"base": "Area",
+"class": "NutStorage",
+"language": "GDScript",
+"path": "res://Environmnent/Home.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
-"path": "res://prototype/Player.gd"
+"path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
+"Level": "",
 "Nut": "",
+"NutStorage": "",
 "Player": ""
 }
 
 [application]
 
 config/name="ld52"
-run/main_scene="res://prototype/Main.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gui]
 
