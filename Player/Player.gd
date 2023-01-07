@@ -27,6 +27,8 @@ func move(x: int, z: int) -> void:
 	_direction.z = z
 	_direction   = _direction.normalized()
 
+func _ready():
+	$AnimationPlayer.stop(true)
 # DEVNOTE: Some momentum and speed-buildup would be nice
 
 var _direction := Vector3.ZERO
@@ -37,10 +39,15 @@ func _process(_delta):
 	# Rotate towards direction of movement
 	if _direction.length() > 0:
 		look_at(global_transform.origin + _direction, Vector3.UP)
+		if not $AnimationPlayer.is_playing():
+			$AnimationPlayer.play("Run")
+	else:
+		$AnimationPlayer.stop()
 
 func _physics_process(delta):
 	#_direction.y = -9.8 * 10
 	_velocity = _direction * speed * delta
+
 	move_and_slide(_velocity, Vector3.UP)
 	
 	_direction = Vector3.ZERO

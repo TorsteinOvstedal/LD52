@@ -29,3 +29,14 @@ margin_top = 18.0
 margin_right = 67.0
 margin_bottom = 32.0
 text = "Storage: 0"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -14.0
+margin_right = 126.0
+text = "Press space to leave your nuts at home"
+align = 1
