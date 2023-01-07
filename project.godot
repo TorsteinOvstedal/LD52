@@ -8,10 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Nut",
+"language": "GDScript",
+"path": "res://prototype/Nut.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://prototype/Player.gd"
+} ]
+_global_script_class_icons={
+"Nut": "",
+"Player": ""
+}
+
 [application]
 
 config/name="ld52"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://prototype/Main.tscn"
 config/icon="res://icon.png"
 
 [gui]
@@ -40,6 +56,18 @@ right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+deposit={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Items"
+3d_physics/layer_3="Mobs"
+3d_physics/layer_4="World"
 
 [physics]
 
