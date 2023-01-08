@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Environmnent/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environmnent/PlayerStart.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://Environmnent/Mobs/MobA.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Environmnent/Mobs/MobB.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.572549, 0.819608, 0.537255, 1 )
@@ -251,8 +252,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 13 )
 [node name="Wall32" parent="Walls" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
 
-[node name="Spatial" parent="." instance=ExtResource( 6 )]
+[node name="Bee" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.435938, 0, 0.899977, 0, 1, 0, -0.899977, 0, 0.435938, 8.75171, 0, -9.89418 )
 
-[node name="Spatial2" parent="." instance=ExtResource( 7 )]
+[node name="Unknown" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9 )
+
+[node name="EnergyDrink" parent="." instance=ExtResource( 8 )]
+
+[node name="EnergyDrink2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07577, 0, 12.0762 )
+
+[node name="EnergyDrink4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07577, 0, 0.698271 )
