@@ -17,6 +17,12 @@ func _process(delta):
 		States.IDLE:
 			pass
 		States.CHASING:
+			var p0 = global_transform.origin
+			var p1 = $Bee.global_transform.origin
+			var v  = (p1 - p0).normalized()
+			var angle = atan2(-v.x, -v.z)
+			rotation.y = lerp_angle(rotation.y, angle, 2 * delta)
+			
 			var target = _target.global_transform.origin
 			var position = global_transform.origin
 			_direction = (target - position).normalized()
