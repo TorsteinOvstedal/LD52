@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/halvferdig ekorn test.glb-7968f9e739123439828786455a156598.scn"
+path="res://.import/halvferdig ekorn test.glb-64e47d0ec3ef94dca18d6fdc053d31bb.scn"
 
 [deps]
 
-source_file="res://Assets/Models/halvferdig ekorn test.glb"
-dest_files=[ "res://.import/halvferdig ekorn test.glb-7968f9e739123439828786455a156598.scn" ]
+source_file="res://assets/Models/halvferdig ekorn test.glb"
+dest_files=[ "res://.import/halvferdig ekorn test.glb-64e47d0ec3ef94dca18d6fdc053d31bb.scn" ]
 
 [params]
 

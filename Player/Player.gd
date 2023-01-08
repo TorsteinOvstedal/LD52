@@ -26,9 +26,14 @@ func move(x: int, z: int) -> void:
 	_direction.x = x
 	_direction.z = z
 	_direction   = _direction.normalized()
+	if _direction.length() != 0:
+		$Ekorn/AnimationPlayer.play("ArmatureAction")
+	else:
+		$Ekorn/AnimationPlayer.stop(true)
 
 func _ready():
 	$AnimationPlayer.stop(true)
+
 # DEVNOTE: Some momentum and speed-buildup would be nice
 
 var _direction := Vector3.ZERO
