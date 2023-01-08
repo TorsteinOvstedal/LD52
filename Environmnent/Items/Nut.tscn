@@ -40,7 +40,7 @@ script = ExtResource( 1 )
 rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -12.2407, 7.37607e-06, 8.66984, 2.89006, 14.1421, 4.08037, -8.17397, 5.00019, -11.5406, 0, 0, 0 )
+transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

@@ -2,7 +2,7 @@ extends Area
 
 class_name Nut
 
-export var rotation_speed = 10
+export var rotation_speed = 1
 
 var r := 0
 
