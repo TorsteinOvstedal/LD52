@@ -9,7 +9,8 @@
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1, -1.5, 0 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1, -1.25346, 0 )
+visible = false
 
 [node name="CountDown" type="Timer" parent="."]
 one_shot = true
@@ -23,3 +24,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 14 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0 )
+current = true

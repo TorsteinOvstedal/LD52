@@ -29,7 +29,10 @@ func store(nuts: int) -> int:
 		return nuts
 
 func _on_Home_body_entered(_body):
-	_active = true 
+	_active = true
+	
+	var player = _body as Player
+	player.stash_nuts(self)
 
 func _on_Home_body_exited(_body):
 	_active = false

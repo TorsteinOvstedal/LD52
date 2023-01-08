@@ -4,8 +4,8 @@
 [ext_resource path="res://Player/Ekorn.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 2.5
-height = 2.0
+radius = 1.5
+height = 3.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Run"
@@ -23,13 +23,16 @@ tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 1, 0, -4.1109e-08, 1, 1, 1, 0.1
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 collision_mask = 11
 script = ExtResource( 1 )
+capacity = 4
 
 [node name="Ekorn" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.2218e-08, 0, 1, 0, 8.2218e-08, 0, -1, 0, 1.52618, 0 )
+transform = Transform( -1, 0, -8.2218e-08, 0, 1, 0, 8.2218e-08, 0, -1, 0, 0.3, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.203609 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51518, -0.204 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Run = SubResource( 2 )
+
+[editable path="Ekorn"]
