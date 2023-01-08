@@ -10,7 +10,7 @@ var game_over := false
 func _ready():
 	timer.connect("timeout", self, "on_timeout")
 	level.home.connect("full", self, "on_full_storage")
-
+	level.player_start.y = player.global_transform.origin.y
 	player.visible = true
 	reset()
 	start()
