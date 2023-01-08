@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Environmnent/Nut.gd" type="Script" id=1]
-[ext_resource path="res://assets/Material_001.material" type="Material" id=2]
-[ext_resource path="res://assets/Material_002.material" type="Material" id=3]
+[ext_resource path="res://Environmnent/Items/Nut.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=2]
+[ext_resource path="res://Assets/Models/Material_002.material" type="Material" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "nøtt_Cylinder001"
@@ -32,17 +32,16 @@ surfaces/1 = {
 }
 
 [sub_resource type="SphereShape" id=2]
-radius = 0.5
 
 [node name="Nut" type="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 collision_layer = 2
 script = ExtResource( 1 )
 rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -8.16044, 0, 5.7799, 1.92671, 9.42805, 2.72025, -5.44931, 3.33346, -7.6937, 0, 0, 0 )
+transform = Transform( -12.2407, 7.37607e-06, 8.66984, 2.89006, 14.1421, 4.08037, -8.17397, 5.00019, -11.5406, 0, 0, 0 )
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.401577, 0 )
 shape = SubResource( 2 )

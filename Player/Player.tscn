@@ -9,7 +9,7 @@ height = 2.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Run"
-length = 0.5
+length = 0.3
 loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Ekorn")
@@ -17,7 +17,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( -0.07, 1, 0, 0, 0, 0, 1, 0, -4.37114e-08, 1, 1, 1, 0.24, 1, 0, 1.2, 0, 0, 1, 0, -4.37114e-08, 1, 1, 1, 0.524161, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1 )
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 1, 0, -4.1109e-08, 1, 1, 1, 0.15, 1, 0, 2, 0, 0, 1, 0, -4.1109e-08, 1, 1, 1 )
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
@@ -25,7 +25,7 @@ collision_mask = 11
 script = ExtResource( 1 )
 
 [node name="Ekorn" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.507559, 0 )
+transform = Transform( -1, 0, -8.22181e-08, 0, 1, 0, 8.22181e-08, 0, -1, 0, 1.58022, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.203609 )

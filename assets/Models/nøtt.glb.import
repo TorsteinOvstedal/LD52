@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/halvferdig ekorn test.glb-70caaa49d6bf8433e930b82037efdf86.scn"
+path="res://.import/nøtt.glb-567686b9c79b663d59f59fe870181694.scn"
 
 [deps]
 
-source_file="res://assets/halvferdig ekorn test.glb"
-dest_files=[ "res://.import/halvferdig ekorn test.glb-70caaa49d6bf8433e930b82037efdf86.scn" ]
+source_file="res://Assets/Models/nøtt.glb"
+dest_files=[ "res://.import/nøtt.glb-567686b9c79b663d59f59fe870181694.scn" ]
 
 [params]
 

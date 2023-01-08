@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var camera := $Camera
+# onready var camera := $Camera
 onready var player := $Player
 onready var level  := $Level
 onready var timer  := $CountDown
@@ -23,9 +23,19 @@ func _process(_delta) -> void:
 	if Input.get_action_strength("deposit"):
 		player.stash_nuts(level.home)
 		
+	if Input.get_action_strength("pause"):
+		pass
+		
 	$UI/Timer.text = str(int(timer.time_left))
 	$UI/NutInfo/Carrying.text = "Carrying: " + str(player.nuts())
 	$UI/NutInfo/Storage.text  = "Storage:  " + str(level.home.nuts())
+	
+	var cp = $CameraPivot/Camera.global_transform.origin
+	var pp = $Player.global_transform.origin
+	var d = (cp - pp).normalized()
+	var offset = pp + d * 10
+	# $CameraPivot.global_transform.origin = offset
+	# $CameraPivot/Camera.look_at(pp, Vector3.UP)
 
 func reset() -> void:
 	player.global_transform.origin = level.player_start

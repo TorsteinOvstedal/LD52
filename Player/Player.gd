@@ -51,3 +51,4 @@ func _physics_process(delta):
 	move_and_slide(_velocity, Vector3.UP)
 	
 	_direction = Vector3.ZERO
+	
