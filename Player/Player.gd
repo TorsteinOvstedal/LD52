@@ -16,12 +16,18 @@ func nuts() -> int:
 	return _nuts
 
 # Collects a new nut 
-func pick_up_nut(nut) -> void:
+func pickup_nut(nut) -> bool:
 	if _nuts < capacity:
 		_nuts += 1
 		emit_signal("collected_nut", self)
+		return true
 
-		nut.queue_free()
+	return false
+
+func drink_energy_drink(drink) -> bool:
+	speed += drink.boost
+	return true
+
 
 # Deposits as many nuts as possible at the base
 func stash_nuts(base) -> void:

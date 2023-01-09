@@ -7,12 +7,14 @@ onready var timer  := $CountDown
 var game_over := false
 
 func _ready():
+	# TODO: Find a better solution
 	player.visible = true
 	level.player_start.y = player.global_transform.origin.y
 
 	# Game over signals
 	timer.connect("timeout", self, "on_timeout")
 	level.home.connect("full", self, "on_full_storage")
+	# TODO: Signal for completion of last level?
 	
 	# UI signals
 	player.connect("collected_nut", self, "on_player_collected_nut")
@@ -28,16 +30,21 @@ func _process(_delta) -> void:
 	var z = Input.get_action_strength("down") - Input.get_action_strength("up")	
 	player.move(x, z)
 
-	if Input.get_action_strength("pause"):
-		pass
-
 	# Update timer display
 	$UI/Timer.text = str(int(timer.time_left))
 
+func load_level() -> void:
+	pass
+
+func reload_level() -> void:
+	pass
+
+func next_level() -> void:
+	pass
 
 func reset() -> void:
 	player.global_transform.origin = level.player_start
-	timer.stop()
+	reload_level()
 
 func start() -> void:
 	timer.start(level.time)

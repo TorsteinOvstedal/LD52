@@ -253,15 +253,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
 
 [node name="Bee" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.435938, 0, 0.899977, 0, 1, 0, -0.899977, 0, 0.435938, 8.75171, 0, -9.89418 )
+transform = Transform( 0.435938, 0, 0.899977, 0, 1, 0, -0.899977, 0, 0.435938, 8.75171, 0, -4.68974 )
 
 [node name="Unknown" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9 )
 
-[node name="EnergyDrink" parent="." instance=ExtResource( 8 )]
+[node name="Buffs" type="Spatial" parent="."]
 
-[node name="EnergyDrink2" parent="." instance=ExtResource( 8 )]
+[node name="EnergyDrink" parent="Buffs" instance=ExtResource( 8 )]
+
+[node name="EnergyDrink2" parent="Buffs" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07577, 0, 12.0762 )
 
-[node name="EnergyDrink4" parent="." instance=ExtResource( 8 )]
+[node name="EnergyDrink4" parent="Buffs" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07577, 0, 0.698271 )
