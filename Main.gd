@@ -41,8 +41,9 @@ func _on_quit() -> void:
 func _on_game_over() -> void:
 	remove_child(pause_screen)
 	
-	add_child(splash_screen)
-	splash_screen.show()
+	# add_child(splash_screen)
+	# splash_screen.show()
+	_quit()
 	
 
 func _quit() -> void:
