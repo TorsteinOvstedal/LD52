@@ -18,6 +18,7 @@ extents = Vector3( 50, 1, 50 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 5 )
+last_level = true
 time = 30
 
 [node name="PlayerStart" parent="." instance=ExtResource( 2 )]

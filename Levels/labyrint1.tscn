@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/bie.glb" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Prototypes/labyrint.glb" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/Models/Material.material" type="Material" id=10]
 [ext_resource path="res://Assets/Models/Material_002.material" type="Material" id=11]
 [ext_resource path="res://assets/Models/Material_001.material" type="Material" id=12]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=13]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "nøtt_Cylinder001"
@@ -315,6 +316,7 @@ resource_name = "CubeAction"
 length = 0.001
 
 [node name="Level" type="Spatial"]
+script = ExtResource( 13 )
 
 [node name="Nuts" type="Spatial" parent="."]
 
@@ -322,7 +324,6 @@ length = 0.001
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59008, -3.52444, 2.34735 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut2"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -338,7 +339,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.36987, -3.52444, -31.7725 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut3"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -354,7 +354,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7053, -3.52444, -17.7935 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut4"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -370,7 +369,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.719, -3.52444, -17.428 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut5"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -386,7 +384,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5619, -3.52444, 7.44163 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut7"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -402,7 +399,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3763, -3.52444, 22.2805 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut8"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -418,7 +414,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40047, -3.52444, 32.6269 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut9"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -434,7 +429,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5225, -3.52444, 21.9168 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut10"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -450,7 +444,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3586, -3.52444, -7.16748 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut11"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -466,7 +459,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5323, -3.52444, -22.2788 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut12"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -482,7 +474,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21905, -3.52444, -22.2788 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut13"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -498,7 +489,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7731, -3.52444, 2.36496 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut14"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -514,7 +504,6 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6362, -3.52444, -22.3127 )
 collision_layer = 2
 script = ExtResource( 4 )
-rotation_speed = 21
 
 [node name="MeshInstance" type="MeshInstance" parent="Nuts/Nut6"]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
@@ -537,11 +526,11 @@ transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
 [node name="Mobs" type="Spatial" parent="."]
 
+[node name="bie2" parent="Mobs" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.5272, -2.94496, 7.47207 )
+
 [node name="bie" parent="Mobs" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4579, -2.94496, -2.3389 )
-
-[node name="bie2" parent="Mobs/bie" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.9851, 0, 9.81097 )
 
 [node name="rev" type="Spatial" parent="Mobs"]
 transform = Transform( -2.7716e-08, 0, -0.634069, 0, 0.634069, 0, 0.634069, 0, -2.7716e-08, 40.1192, -4.71829, 22.9214 )
@@ -671,13 +660,13 @@ material/1 = ExtResource( 3 )
 anims/ArmatureAction001 = SubResource( 6 )
 anims/CubeAction = SubResource( 4 )
 
-[node name="redbull" type="Spatial" parent="."]
+[node name="EnergyDrinks" type="Spatial" parent="."]
 
-[node name="redbull" parent="redbull" instance=ExtResource( 7 )]
+[node name="redbull" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 7.07269, 0, 0, 0, 7.07269, 0, 0, 0, 7.07269, -30.3392, -2.93427, 2.38608 )
 
-[node name="redbull2" parent="redbull" instance=ExtResource( 7 )]
+[node name="redbull2" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 7.07269, 0, 0, 0, 7.07269, 0, 0, 0, 7.07269, 26.9635, -2.93427, -17.1261 )
 
-[node name="redbull3" parent="redbull" instance=ExtResource( 7 )]
+[node name="redbull3" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 7.07269, 0, 0, 0, 7.07269, 0, 0, 0, 7.07269, 27.5353, -2.95968, 17.7473 )

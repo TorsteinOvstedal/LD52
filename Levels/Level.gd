@@ -2,6 +2,9 @@ extends Spatial
 
 class_name Level
 
+# Temporary hack
+export var last_level := false
+
 var level_name = "LEVEL 0"
 
 # Time to game over
