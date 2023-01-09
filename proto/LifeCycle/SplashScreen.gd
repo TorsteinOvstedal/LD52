@@ -10,25 +10,24 @@ onready var _parent := get_parent()
 
 func show() -> void:
 	if not _shown:
-		_parent.call_deferred("add_child", self)
 		get_tree().set_deferred("paused", true)
 		_shown = true
+		visible = true
 
 func hide() -> void:
 	if _shown:
 		get_tree().set_deferred("paused", false)
 		_shown = false
-		_parent.call_deferred("remove_child", self)
+		visible = false
 
 var _shown: bool 
 
 func _ready() -> void:
-	visible = true
+	_shown  = false
+	visible = false
 	pause_mode = PAUSE_MODE_PROCESS
 	playBtn.connect("pressed", self, "_on_playBtn_pressed")
-	
-	_shown = false
-	_parent.call_deferred("remove_child", self)
+
 	show()
 
 func _process(_delta: float) -> void:

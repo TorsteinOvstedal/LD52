@@ -1,15 +1,19 @@
 extends Node
 
+# Entry point of the application
+
+# Application states
+
+enum State {SPLASH, PLAYING, PAUSED}
+
 var splash_screen := preload("res://proto/LifeCycle/SplashScreen.tscn").instance()
 var pause_screen  := preload("res://proto/LifeCycle/PauseScreen.tscn").instance()
 var game          := preload("res://proto/LifeCycle/Game.tscn").instance()
 
-enum State {SPLASH, PLAYING, PAUSED}
-
 var _state: int
 
 func _init() -> void:
-	add_child(game)
+	add_child(game)				# Always present
 	add_child(splash_screen)
 
 func _ready() -> void:
@@ -21,6 +25,7 @@ func _ready() -> void:
 
 func _on_play() -> void:
 	game.reset()
+
 	splash_screen.hide()
 	add_child(pause_screen)
 
