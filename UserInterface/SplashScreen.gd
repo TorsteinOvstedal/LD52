@@ -6,19 +6,17 @@ onready var title   := $TitleLabl
 onready var guide   := $CenterContainer/GridContainer/GuideLabel
 onready var playBtn := $CenterContainer/GridContainer/PlayButton
 
-onready var _parent := get_parent()
-
 func show() -> void:
 	if not _shown:
-		get_tree().set_deferred("paused", true)
-		_shown = true
 		visible = true
-		print("SHOW")
+		_shown = true
+		get_tree().paused = true
+
 func hide() -> void:
 	if _shown:
-		get_tree().set_deferred("paused", false)
-		_shown = false
 		visible = false
+		_shown = false
+		get_tree().paused = false
 
 var _shown: bool 
 

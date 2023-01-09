@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://proto/FollowPath.gd" type="Script" id=1]
-[ext_resource path="res://proto/PathFollower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://proto/mobs/FollowPath.gd" type="Script" id=1]
+[ext_resource path="res://proto/mobs/PathFollower.tscn" type="PackedScene" id=2]
+
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )

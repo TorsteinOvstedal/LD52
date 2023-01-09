@@ -2,6 +2,8 @@ extends Spatial
 
 class_name Level
 
+var level_name = "LEVEL 0"
+
 # Time to game over
 export var time: int = 40
 

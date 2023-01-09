@@ -8,43 +8,47 @@ var levels := [
 	{"path": "res://Levels/Prototypes/Level2.tscn", "scene": null, "instance": null}
 ]
 
-
-
 # Access manager: Iterative
 
 signal at_end
 
-var _current_level := 0
+var _next_level := 0
 
 func has_next() -> bool:
-	return (_current_level + 1) < levels.size()
+	return (_next_level + 1) < levels.size()
 
 func next() -> Node:
 	if not has_next():
 		emit_signal("at_end")
 
-	var level: Level = get_level()
+	var level = get_level()
 	
 	if has_next():
-		_current_level += 1
+		_next_level += 1
 
 	return level
 
 func get_level() -> Level:
-	var level = levels[_current_level]
+	var id = _next_level
+	if id > 0:
+		id - 1
+	
+	var level = levels[id]
 	var instance = level["instance"]
 	if instance:
 		return instance
 	
-	return _load_level(_current_level)
+	return _load_level(_next_level)
 
 func reload_level() -> Level:
-	var level = levels[_current_level]
+	assert(_next_level != 0)
+	
+	var level = levels[_next_level - 1]
 	var instance: Level = level["instance"]
 	if instance:
 		_free_instance(level)
 	
-	return _load_level(_current_level)
+	return _load_level(_next_level - 1)
 
 func _load_level(id: int) -> Level:
 	if not _is_level(id):
@@ -93,9 +97,9 @@ func _free_instance(level) -> void:
 	if not instance:
 		return
 	
-	var parent = instance.get_parent()
-	if parent:
-		parent.remove_child(instance)
+	# var parent = instance.get_parent()					# NB: Tree modification
+	# if parent:
+	# 	parent.remove_child(instance)
 	
 	level["instance"] = null	
 	instance.call_deferred("queue_free")
