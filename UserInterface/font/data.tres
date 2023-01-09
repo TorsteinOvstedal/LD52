@@ -1,0 +1,4 @@
+[gd_resource type="DynamicFontData" format=2]
+
+[resource]
+font_path = "res://assets/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf"
