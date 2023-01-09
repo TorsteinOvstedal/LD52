@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Models/nøtt.glb" type="PackedScene" id=1]
+[ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Prototypes/labyrint2.glb" type="PackedScene" id=3]
+[ext_resource path="res://Environmnent/PlayerStart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environmnent/Home.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Spatial"]
+
+[node name="labyrint2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+
+[node name="Home" parent="labyrint2" instance=ExtResource( 5 )]
+transform = Transform( -1.5756e-08, 0, 0.360455, 0, 0.360455, 0, -0.360455, 0, -1.5756e-08, -10.44, -1.00514, -5.48356 )
+
+[node name="PlayerStart" parent="labyrint2" instance=ExtResource( 4 )]
+transform = Transform( 0.341726, 0, 0, 0, 0.341726, 0, 0, 0, 0.341726, -9.25925, -0.705057, -5.50974 )
+
+[node name="Nuts" type="Spatial" parent="."]
+
+[node name="nøtt" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6471, -0.860077, -4.76252 )
+
+[node name="nøtt2" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83522, -0.860077, 0.249344 )
+
+[node name="nøtt3" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9802, -0.860077, 5.18718 )
+
+[node name="nøtt4" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.6652, -0.860077, -15.096 )
+
+[node name="nøtt5" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5462, -0.860077, 30.3408 )
+
+[node name="nøtt6" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2948, -0.860077, 30.3408 )
+
+[node name="nøtt7" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5763, -0.860077, 30.3408 )
+
+[node name="nøtt8" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.6264, -0.860077, 30.3408 )
+
+[node name="nøtt9" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5331, -0.860077, 15.5259 )
+
+[node name="nøtt10" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52839, -0.860077, 15.5259 )
+
+[node name="nøtt11" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6428, -0.862305, -9.33571 )
+
+[node name="nøtt12" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5565, -0.862305, -24.8689 )
+
+[node name="nøtt13" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4147, -0.862305, -24.8689 )
+
+[node name="nøtt14" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33005, -0.868996, -24.3639 )
+
+[node name="nøtt15" parent="Nuts" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0738, -0.868996, -14.0148 )
+
+[node name="mobs" type="Spatial" parent="."]
+
+[node name="redbull" type="Spatial" parent="."]
+
+[node name="EnergyDrink" parent="redbull" instance=ExtResource( 2 )]
+transform = Transform( 6.89926, 0, 0, 0, 6.89926, 0, 0, 0, 6.89926, -12.9842, -2.58396, -17.3064 )
+
+[node name="EnergyDrink2" parent="redbull" instance=ExtResource( 2 )]
+transform = Transform( 6.89926, 0, 0, 0, 6.89926, 0, 0, 0, 6.89926, -42.2277, -2.58396, 22.7433 )
+
+[node name="EnergyDrink3" parent="redbull" instance=ExtResource( 2 )]
+transform = Transform( 6.89926, 0, 0, 0, 6.89926, 0, 0, 0, 6.89926, 51.4953, -2.58396, 22.7433 )
+
+[node name="EnergyDrink4" parent="redbull" instance=ExtResource( 2 )]
+transform = Transform( 6.89926, 0, 0, 0, 6.89926, 0, 0, 0, 6.89926, 22.1436, -2.58396, -21.8294 )
