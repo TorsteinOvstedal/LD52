@@ -1,5 +1,7 @@
 extends Spatial
 
+signal game_over
+
 # Game and UI management
 
 onready var player := $Player				# FIXME
@@ -51,7 +53,8 @@ func on_timeout() -> void:
 func on_full_storage() -> void:
 	print("Game over: You harvested enough nuts")
 	game_over = true
-	get_tree().paused = true
+	emit_signal("game_over")
+	# get_tree().paused = true
 
 # UI handlers
 

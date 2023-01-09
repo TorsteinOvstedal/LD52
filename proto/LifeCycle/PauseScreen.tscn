@@ -23,21 +23,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 462.0
-margin_top = 255.0
-margin_right = 562.0
-margin_bottom = 345.0
+margin_left = 445.0
+margin_top = 237.0
+margin_right = 578.0
+margin_bottom = 363.0
 rect_min_size = Vector2( 100, 90 )
 theme = ExtResource( 2 )
 custom_constants/separation = 16
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_right = 100.0
-margin_bottom = 34.0
+margin_right = 133.0
+margin_bottom = 55.0
 text = "RESUME"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 50.0
-margin_right = 100.0
-margin_bottom = 84.0
+margin_top = 71.0
+margin_right = 133.0
+margin_bottom = 126.0
 text = "QUIT"

@@ -13,7 +13,7 @@ func show() -> void:
 		get_tree().set_deferred("paused", true)
 		_shown = true
 		visible = true
-
+		print("SHOW")
 func hide() -> void:
 	if _shown:
 		get_tree().set_deferred("paused", false)
@@ -27,8 +27,6 @@ func _ready() -> void:
 	visible = false
 	pause_mode = PAUSE_MODE_PROCESS
 	playBtn.connect("pressed", self, "_on_playBtn_pressed")
-
-	show()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("play"):

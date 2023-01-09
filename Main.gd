@@ -1,4 +1,4 @@
-extends Spatial
+extends Node
 
 # Entry point of the application
 
@@ -24,11 +24,15 @@ func _ready() -> void:
 	pause_screen.connect( "quit",      self, "_on_quit")
 	game.connect(         "game_over", self, "_on_game_over")
 	
+	splash_screen.show()
+	
 func _on_play() -> void:
-	game.reset()
-
 	splash_screen.hide()
+	remove_child(splash_screen)
+
 	add_child(pause_screen)
+
+	game.reset()
 
 func _on_pause() -> void:
 	pause_screen.pause()
@@ -40,5 +44,7 @@ func _on_quit() -> void:
 	get_tree().quit()
 	
 func _on_game_over() -> void:
-	call_deferred("remove_child", pause_screen)
+	remove_child(pause_screen)
+	
+	add_child(splash_screen)
 	splash_screen.show()
