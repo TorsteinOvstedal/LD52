@@ -1,37 +1,37 @@
-extends Spatial
+extends Item
 
-signal consumed
-signal completed
+# Always allow player to pick up the energy drink
 
-export var boost := 500
+func query(player: PhysicsBody):
+	_consumer = player
+	drink()
+	return true
+
+# Buff properties
+
+export var boost    := 500
 export var duration := 4
 
-onready var timer = $Duration
+func drink():
+	_consumer.speed += boost
+	_timer.start(duration)
+	visible = false
 
-var _consumed := false
+func debuff_player() -> void:
+	_consumer.speed -= boost
+	queue_free()
+
+var _timer: Timer
 var _consumer: Spatial = null
 
+func _init():
+	_timer = Timer.new()
+	_timer.one_shot  = true
+	_timer.autostart = false
+	add_child(_timer)
+
 func _ready():
-	timer.one_shot = true
-	timer.autostart = false
-	timer.connect("timeout", self, "_on_boost_completion")
-
-func _consume():
-	_consumer.speed += boost
-	timer.start(duration)
-	visible = false
-	emit_signal("consumed")
-
-func _on_EnergyDrink_body_entered(body):
-	if not _consumed:
-		_consumer = body
-		_consume()
-		_consumed = true
-
-func _on_EnergyDrink_body_exited(body):
-	pass
+	_timer.connect("timeout", self, "_on_boost_completion")
 
 func _on_boost_completion():
-	_consumer.speed -= boost
-	emit_signal("completed")
-	queue_free()
+	debuff_player()

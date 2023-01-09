@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Environmnent/Items/Nut.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=2]
 [ext_resource path="res://Assets/Models/Material_002.material" type="Material" id=3]
+[ext_resource path="res://Environmnent/Utils/SpinAnimation.gd" type="Script" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "nøtt_Cylinder001"
@@ -35,13 +36,15 @@ surfaces/1 = {
 radius = 2.0
 
 [node name="Nut" type="Area"]
-collision_layer = 2
+collision_layer = 0
 script = ExtResource( 1 )
-rotation_speed = 21
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Model" type="MeshInstance" parent="."]
 transform = Transform( -12.2407, 7.37607e-06, 8.66984, 4.90716, 12.3661, 6.92826, -7.14745, 8.49006, -10.0913, 0, 0, 0 )
 mesh = SubResource( 1 )
+
+[node name="SpinAnimation" type="Node" parent="Model"]
+script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.401577, 0 )
