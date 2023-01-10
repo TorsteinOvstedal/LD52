@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/labyrint.glb-6ab107d21a6f77a1504a3aba4284ffda.scn"
+path="res://.import/labyrint.glb-499de464aae953d99457b1eecc8f6d11.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Level1/labyrint.glb"
-dest_files=[ "res://.import/labyrint.glb-6ab107d21a6f77a1504a3aba4284ffda.scn" ]
+source_file="res://assets/Models/Level1/labyrint.glb"
+dest_files=[ "res://.import/labyrint.glb-499de464aae953d99457b1eecc8f6d11.scn" ]
 
 [params]
 

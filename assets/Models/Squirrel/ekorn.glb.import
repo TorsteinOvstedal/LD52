@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/ekorn.glb-971edf428a3ed6f86bff71f2939ede52.scn"
+path="res://.import/ekorn.glb-13a593c8f1f30f6a4968b9926a676dbb.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Squirrel/ekorn.glb"
-dest_files=[ "res://.import/ekorn.glb-971edf428a3ed6f86bff71f2939ede52.scn" ]
+source_file="res://assets/Models/Squirrel/ekorn.glb"
+dest_files=[ "res://.import/ekorn.glb-13a593c8f1f30f6a4968b9926a676dbb.scn" ]
 
 [params]
 

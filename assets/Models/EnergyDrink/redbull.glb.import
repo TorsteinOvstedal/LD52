@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/redbull.glb-7d5634a62b2375c3d07c5a66bdafde34.scn"
+path="res://.import/redbull.glb-92cde1221df30705fb444b8d80708f50.scn"
 
 [deps]
 
-source_file="res://Assets/Models/EnergyDrink/redbull.glb"
-dest_files=[ "res://.import/redbull.glb-7d5634a62b2375c3d07c5a66bdafde34.scn" ]
+source_file="res://assets/Models/EnergyDrink/redbull.glb"
+dest_files=[ "res://.import/redbull.glb-92cde1221df30705fb444b8d80708f50.scn" ]
 
 [params]
 
