@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Models/Tre/ekorntre.glb" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 2, 1, 2 )
 
 [node name="Home" type="Area"]
 collision_layer = 0
@@ -12,6 +11,7 @@ script = ExtResource( 1 )
 capacity = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.810863, 0 )
 shape = SubResource( 3 )
 
 [node name="ekorntre" parent="." instance=ExtResource( 2 )]

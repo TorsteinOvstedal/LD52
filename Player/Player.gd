@@ -2,8 +2,8 @@ extends KinematicBody
 
 class_name Player
 
-signal collected_nut(player)
-signal deposited_nuts(base)
+signal collected_nut()
+signal deposited_nuts()
 
 # Movement speed
 export var speed := 1000.0
@@ -19,7 +19,7 @@ func nuts() -> int:
 func pickup_nut(nut) -> bool:
 	if _nuts < capacity:
 		_nuts += 1
-		emit_signal("collected_nut", self)
+		emit_signal("collected_nut")
 		return true
 
 	return false
@@ -32,8 +32,8 @@ func drink_energy_drink(drink) -> bool:
 # Deposits as many nuts as possible at the base
 func stash_nuts(base) -> void:
 	_nuts -= base.store(_nuts)
-	emit_signal("collected_nut", self) 		# notify UI
-	emit_signal("deposited_nuts", base)
+	emit_signal("collected_nut")
+	emit_signal("deposited_nuts")
 
 # Moves the player in the given direction
 func move(x: int, z: int) -> void:
@@ -43,9 +43,9 @@ func move(x: int, z: int) -> void:
 	
 	# Play run animation if moving
 	if _direction.length() != 0:
-		$Ekorn/AnimationPlayer.play("ArmatureAction")
+		$Model/AnimationPlayer.play("ArmatureAction")
 	else:
-		$Ekorn/AnimationPlayer.stop(true)
+		$Model/AnimationPlayer.stop(true)
 
 # TODO: Some momentum / speed-buildup 
 
@@ -59,12 +59,9 @@ func _process(_delta):
 	# Rotate towards direction of movement
 	if _direction.length() > 0:
 		look_at(global_transform.origin + _direction, Vector3.UP)
-		if not $AnimationPlayer.is_playing():
-			$AnimationPlayer.play("Run")
-	else:
-		$AnimationPlayer.stop()
 
 func _physics_process(delta):
 	_velocity = _direction * speed * delta
+	_velocity.y -= 9.8 * 50 * delta
 	move_and_slide(_velocity, Vector3.UP)
 	_direction = Vector3.ZERO

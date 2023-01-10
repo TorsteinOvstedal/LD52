@@ -1,38 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Ekorn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Models/Squirrel/ekorn.glb" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 1.5
-height = 3.0
-
-[sub_resource type="Animation" id=2]
-resource_name = "Run"
-length = 0.3
-loop = true
-tracks/0/type = "transform"
-tracks/0/path = NodePath("Ekorn")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 1, 0, -4.1109e-08, 1, 1, 1, 0.15, 1, 0, 1.5, 0, 0, 1, 0, -4.1109e-08, 1, 1, 1 )
+[sub_resource type="SphereShape" id=1]
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
-collision_mask = 11
+collision_mask = 14
 script = ExtResource( 1 )
 capacity = 4
 
-[node name="Ekorn" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.2218e-08, 0, 1, 0, 8.2218e-08, 0, -1, 0, 0.3, 0 )
+[node name="Model" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51518, -0.204 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00285, -0.171193 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Run = SubResource( 2 )
-
-[editable path="Ekorn"]
+[editable path="Model"]
