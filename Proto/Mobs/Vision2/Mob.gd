@@ -1,6 +1,6 @@
 extends KinematicBody
 
-# Behavior
+# AI Behavior
 
 func _physics_process(delta: float) -> void:	
 	look_all_directions()
@@ -11,6 +11,8 @@ func _physics_process(delta: float) -> void:
 
 export var view_offset := Vector3(0, 0, 0) 		# Offset from node origin
 export var view_distance := 2.0
+
+const DIRECTIONS = [Vector3.FORWARD, Vector3.LEFT, Vector3.BACK, Vector3.RIGHT]
 
 onready var space := get_world().direct_space_state
 
@@ -28,24 +30,24 @@ var stuck_limit := 0.001
 var stuck_time  := 0.0
 var stuck_time_limit := 0.2
 
-# View directions
+# Animation
 
-const DIRECTIONS = [Vector3.FORWARD, Vector3.LEFT, Vector3.BACK, Vector3.RIGHT]
+export var rotation_speed := 10
 
 # Vision system
 
-func look_ahead(position, target) -> Dictionary:
+func is_view_obstructed(position, target) -> Dictionary:
 	return space.intersect_ray(position, target, [self])
 
 func look_all_directions() -> void:
 	var position := global_transform.origin + view_offset
 	var target   := position + direction * view_distance
 	
-	if look_ahead(position, target):
+	if is_view_obstructed(position, target):
 		var openings := []
 		for direction in DIRECTIONS:
 			target = position + direction * view_distance
-			if not look_ahead(position, target):
+			if not is_view_obstructed(position, target):
 				openings.append(direction)
 		
 		# Select random opening
@@ -56,15 +58,15 @@ func look_right() -> void:
 	var position := global_transform.origin + view_offset
 	var target   := position + direction * view_distance
 
-	if look_ahead(position, target):
+	if is_view_obstructed(position, target):
 		var looking := true
 		# NOTE: Index of current direction
-		# TODO: Refactor from direction Vector to int
+		# TODO: Refactor from direction Vector3 to int
 		var i = DIRECTIONS.bsearch(direction)
 		while looking:
 			i = (i + 1) % DIRECTIONS.size()
 			target = position + DIRECTIONS[i] * view_distance
-			looking = not look_ahead(position, target)
+			looking = not is_view_obstructed(position, target)
 		
 		self.direction = DIRECTIONS[i]
 
@@ -98,3 +100,14 @@ func _shake_free(delta: float) -> void:
 		stuck_time = 0.0
 
 	last_position = global_transform.origin
+	
+# Animation
+
+func _process(delta):
+	# Rotate
+	var p0 = global_transform.origin
+	var p1 = p0 + direction
+	var v  = (p1 - p0).normalized()
+	var angle = atan2(-v.x, -v.z)
+	rotation.y = lerp_angle(rotation.y, angle, rotation_speed * delta)
+	
