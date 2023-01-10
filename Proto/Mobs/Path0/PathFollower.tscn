@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Environmnent/Mobs/Bee.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Proto/Mobs/Path0/PathFollower.gd" type="Script" id=2]
+
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -14.1672, 0, -0.095817, 0, 0, 0, 0, 0, 0, 12.9079, 0, 0.0410647 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.6
+height = 1.5
+
+[node name="Path" type="Path"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow" type="PathFollow" parent="."]
+transform = Transform( 0.00505557, 0, 0.999984, 0, 1, 0, -0.999987, 0, 0.00505555, -14.1672, 0, -0.095817 )
+
+[node name="Mob" type="Area" parent="PathFollow"]
+collision_layer = 4
+
+[node name="Model" parent="PathFollow/Mob" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.2, -0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PathFollow/Mob"]
+shape = SubResource( 2 )

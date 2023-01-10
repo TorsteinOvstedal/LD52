@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "NutStorage",
 "language": "GDScript",
-"path": "res://Environmnent/Home.gd"
+"path": "res://Environmnent/Core/Home.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ld52"
-run/main_scene="res://Prototype/Vision/Main.tscn"
+run/main_scene="res://Proto/Mobs/Vision/Main.tscn"
 config/icon="res://Assets/icon.png"
 
 [autoload]
