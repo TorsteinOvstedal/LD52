@@ -2,6 +2,10 @@ extends Area
 
 # It would be nice to specify a subrange of a path
 
+# This counter is overkill
+
+class_name PathMob
+
 class Counter:
 	
 	var _index: int

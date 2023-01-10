@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Environmnent/Items/Nut.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environmnent/Core/Home.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Proto/Mobs/Vision/Mob.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Models/Bee/bie.glb" type="PackedScene" id=8]
+[ext_resource path="res://Bee0.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/fonts/Rowdies-Regular.ttf"
@@ -28,6 +31,18 @@ outline_size = 6
 outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
 font_data = SubResource( 1 )
 
+[sub_resource type="BoxShape" id=8]
+
+[sub_resource type="SphereMesh" id=5]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1.2, 1, 1.2 )
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
 
@@ -48,10 +63,10 @@ transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 28.037
 [node name="Nuts" type="Node" parent="."]
 
 [node name="Nut" parent="Nuts" instance=ExtResource( 5 )]
-transform = Transform( 3.8161, -1.19889, 0, 1.19889, 3.8161, 0, 0, 0, 4, -38.1021, -12.5, 3 )
+transform = Transform( 3.8161, -1.19889, 0, 1.19889, 3.8161, 0, 0, 0, 4, -38.1021, -12.5, 17.2258 )
 
 [node name="Nut2" parent="Nuts" instance=ExtResource( 5 )]
-transform = Transform( 3.75272, 0, 1.3846, 0.558019, 3.66077, -1.51241, -1.26717, 1.61207, 3.43446, -38.1021, -12.5, -17.8029 )
+transform = Transform( 3.75272, 0, 1.3846, 0.558019, 3.66077, -1.51241, -1.26717, 1.61207, 3.43446, -38.1021, -12.5, -5.32225 )
 
 [node name="Nut3" parent="Nuts" instance=ExtResource( 5 )]
 transform = Transform( 3.9994, 0, -0.0691116, -0.0206465, 3.81734, -1.19479, 0.0659555, 1.19496, 3.81677, -10.2017, -12.5, -17.8029 )
@@ -157,8 +172,223 @@ custom_fonts/font = SubResource( 3 )
 align = 1
 
 [node name="CountDown" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 60.0
+
+[node name="Fox" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.3038, -13.8008, -1.62849 )
+speed = 5.0
+
+[node name="rev" parent="Fox" index="0"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+
+[node name="RayCast" parent="Fox" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0857697, 1.98136, 0.797431 )
+cast_to = Vector3( 0, 0, 2 )
+
+[node name="Area" type="Area" parent="Fox"]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Fox/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 1.11469, 1.42817 )
+shape = SubResource( 8 )
+
+[node name="Path0" type="Spatial" parent="."]
+visible = false
+
+[node name="Point" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73286, -13, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point2" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6858, -13, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point2"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point3" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6858, -13, 6.52034 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point3"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point4" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.851, -13, 6.52034 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point4"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point5" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.851, -13, -14.2964 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point5"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point6" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3119, -13, -14.2964 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point6"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point7" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3119, -13, -17.9403 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point7"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point8" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0735, -13, -17.9403 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point8"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point9" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0735, -13, -10.4391 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point9"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point10" type="Spatial" parent="Path0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20492, -13, -9.90416 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path0/Point10"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Path1" type="Spatial" parent="."]
+visible = false
+
+[node name="Point" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.032, -13, 17.7805 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point2" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.032, -13, -5.69996 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point2"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point3" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1605, -13, -5.69996 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point3"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point4" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1605, -13, -13.6352 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point4"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point5" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1605, -13, -18.121 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point5"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point6" type="Spatial" parent="Path1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7672, -13, -18.121 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path1/Point6"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Bee0" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68125, -12.7264, 2.11076 )
+collision_layer = 0
+script = ExtResource( 9 )
+loop = true
+speed = 10.0
+
+[node name="Model" parent="Bee0" instance=ExtResource( 8 )]
+transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Bee0"]
+shape = SubResource( 7 )
+
+[node name="Bee1" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1382, -12.7264, 17.3914 )
+collision_layer = 0
+script = ExtResource( 9 )
+speed = 10.0
+
+[node name="Model" parent="Bee1" instance=ExtResource( 8 )]
+transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Bee1"]
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="Fox/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Bee0" to="." method="_on_Bee0_body_entered"]
+[connection signal="body_entered" from="Bee1" to="." method="_on_Bee1_body_entered"]
 
 [editable path="Player"]
 [editable path="Player/Model"]
 [editable path="Home"]
+[editable path="Fox"]
+[editable path="Fox/rev"]
