@@ -35,7 +35,6 @@ transform = Transform( 1, 0, 0, 0, -0.729518, 0.683962, 0, -0.683962, -0.729518,
 [node name="Mob" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 2.5
 speed = 2000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob"]
@@ -48,7 +47,6 @@ shape = SubResource( 5 )
 [node name="Mob2" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.0
 speed = 1750.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob2"]
@@ -61,7 +59,6 @@ shape = SubResource( 5 )
 [node name="Mob3" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 5.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob3"]
 mesh = SubResource( 3 )
@@ -85,7 +82,6 @@ shape = SubResource( 5 )
 [node name="Mob4" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.5
 speed = 3000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob4"]
@@ -98,7 +94,6 @@ shape = SubResource( 5 )
 [node name="Mob6" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.5
 speed = 3000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob6"]
@@ -111,7 +106,6 @@ shape = SubResource( 5 )
 [node name="Mob7" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.5
 speed = 3000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob7"]
@@ -124,7 +118,6 @@ shape = SubResource( 5 )
 [node name="Mob8" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.5
 speed = 3000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob8"]
@@ -137,7 +130,6 @@ shape = SubResource( 5 )
 [node name="Mob9" type="KinematicBody" parent="."]
 collision_layer = 2
 script = ExtResource( 2 )
-sensor_length = 3.5
 speed = 3000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Mob9"]
