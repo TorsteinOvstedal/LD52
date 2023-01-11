@@ -4,6 +4,7 @@ extends Item
 
 func query(player: PhysicsBody):
 	_consumer = player
+	$AudioStreamPlayer.play()
 	drink()
 	return true
 

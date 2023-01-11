@@ -102,10 +102,13 @@ func _on_countdown_timeout() -> void:
 # TODO: Re-think mob collision handling 
 
 func _on_Bee0_body_entered(body):
+	$Player.play_death_sound()
 	game_over(false)
 
 func _on_Bee1_body_entered(body):
+	$Player.play_death_sound()
 	game_over(false)
 
 func _on_Area_body_entered(body):
+	$Player.play_death_sound()
 	game_over(false)

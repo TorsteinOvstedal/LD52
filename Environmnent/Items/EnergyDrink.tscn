@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Environmnent/Items/EnergyDrink.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Models/EnergyDrink/redbull.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Audio/ekornskvatter2.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Environmnent/Utils/SpinAnimation.gd" type="Script" id=4]
 
 [sub_resource type="CylinderShape" id=2]
@@ -23,5 +24,8 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [editable path="Model"]

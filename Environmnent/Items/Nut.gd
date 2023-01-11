@@ -9,4 +9,13 @@ func query(player: PhysicsBody) -> bool:
 	return false
 	
 func pickup() -> void:
+	visible = false
+	$AudioStreamPlayer.play()
+	
+func _ready():
+	$AudioStreamPlayer.autoplay = false
+	$AudioStreamPlayer.connect("finished", self, "_on_asp_finished")
+
+func _on_asp_finished() -> void:
 	queue_free()
+		

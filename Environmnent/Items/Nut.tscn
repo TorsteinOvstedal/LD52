@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Environmnent/Items/Nut.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Models/Nut/nut.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Audio/ekornskvatter1.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Environmnent/Utils/SpinAnimation.gd" type="Script" id=4]
 
 [sub_resource type="SphereShape" id=2]
@@ -19,3 +20,7 @@ transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
 [node name="SpinAnimation" type="Node" parent="nut"]
 script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Nut"

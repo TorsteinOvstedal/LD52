@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/noettedump1.mp3-f32a29fbc532ea6960e9504085e07894.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/noettedump1.mp3"
+dest_files=[ "res://.import/noettedump1.mp3-f32a29fbc532ea6960e9504085e07894.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

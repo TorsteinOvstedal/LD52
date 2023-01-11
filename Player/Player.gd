@@ -45,10 +45,13 @@ func move(x: int, z: int) -> void:
 	_direction   = _direction.normalized()
 	
 	# Play run animation if moving
-	if _direction.length() != 0:
+	if _direction.length_squared() != 0:
+		look_at(global_transform.origin + _direction, Vector3.UP)
 		$Model/AnimationPlayer.play("ArmatureAction")
+		play_walk_sound()
 	else:
 		$Model/AnimationPlayer.stop(true)
+		stop_walk_sound()
 
 func play_walk_sound() -> void:
 	if not asp0.playing:
@@ -57,7 +60,14 @@ func play_walk_sound() -> void:
 func stop_walk_sound() -> void:
 	if asp0.playing:
 		asp0_timestamp = asp0.get_playback_position()
+		if asp0_timestamp <= asp0.stream.get_length():
+			asp0_timestamp = 0.0
+
 		asp0.stop()
+		
+func play_death_sound() -> void:
+	$DeathAudioPlayer.play()
+
 
 # TODO: Some momentum / speed-buildup 
 
@@ -70,9 +80,6 @@ var _nuts      := 0
 func _process(_delta):	
 	if _direction.length_squared() > 0:
 		look_at(global_transform.origin + _direction, Vector3.UP)
-		play_walk_sound()
-	else:
-		stop_walk_sound()
 
 func _physics_process(delta):
 	_velocity = _direction * speed * delta

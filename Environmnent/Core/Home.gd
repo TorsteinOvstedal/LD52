@@ -22,9 +22,12 @@ func store(nuts: int) -> int:
 	if _nuts >= capacity:
 		var reject := _nuts - capacity
 		_nuts = capacity
+		$AudioStreamPlayer.play()
+		emit_signal("stored_nuts")
 		emit_signal("full")
 		return nuts - reject
 	else:
+		$AudioStreamPlayer.play()
 		emit_signal("stored_nuts")
 		return nuts
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ekornskvatter2.mp3-0051ff83653dfdad1ddaef5c6deac685.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/ekornskvatter2.mp3"
+dest_files=[ "res://.import/ekornskvatter2.mp3-0051ff83653dfdad1ddaef5c6deac685.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
