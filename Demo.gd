@@ -80,6 +80,7 @@ func game_over(victory: bool) -> void:
 	statusLabel.text = text
 	$GameOver.visible = true
 	get_tree().paused = true
+
 	
 func _on_stored_nuts() -> void:
 	set_storage_label()

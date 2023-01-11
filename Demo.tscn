@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://Environmnent/Core/Home.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Proto/Mobs/Vision/Mob.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Models/Bee/bie.glb" type="PackedScene" id=8]
-[ext_resource path="res://Bee0.gd" type="Script" id=9]
+[ext_resource path="res://Proto/Mobs/Path1/Mob.gd" type="Script" id=9]
+[ext_resource path="res://Proto/Mobs/Vision2/Mob.gd" type="Script" id=10]
+[ext_resource path="res://UI.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/fonts/Rowdies-Regular.ttf"
@@ -42,6 +44,14 @@ albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 1.2, 1, 1.2 )
+
+[sub_resource type="SphereShape" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 0, 0.792157, 1 )
+
+[sub_resource type="SphereMesh" id=11]
+material = SubResource( 10 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -144,8 +154,10 @@ text = "asdfasdfasdfasdf"
 align = 1
 
 [node name="UI" type="Control" parent="."]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 11 )
 
 [node name="TimeLabel" type="Label" parent="UI"]
 anchor_right = 1.0
@@ -175,11 +187,11 @@ align = 1
 wait_time = 60.0
 
 [node name="Fox" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.3038, -13.8008, -1.62849 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3038, -13.8008, -1.62849 )
 speed = 5.0
 
 [node name="rev" parent="Fox" index="0"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0 )
 
 [node name="RayCast" parent="Fox" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0857697, 1.98136, 0.797431 )
@@ -362,8 +374,6 @@ material/0 = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68125, -12.7264, 2.11076 )
 collision_layer = 0
 script = ExtResource( 9 )
-loop = true
-speed = 10.0
 
 [node name="Model" parent="Bee0" instance=ExtResource( 8 )]
 transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
@@ -375,13 +385,24 @@ shape = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1382, -12.7264, 17.3914 )
 collision_layer = 0
 script = ExtResource( 9 )
-speed = 10.0
 
 [node name="Model" parent="Bee1" instance=ExtResource( 8 )]
 transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bee1"]
 shape = SubResource( 7 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, -11.7639, 2.00425 )
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+mesh = SubResource( 11 )
 
 [connection signal="body_entered" from="Fox/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Bee0" to="." method="_on_Bee0_body_entered"]
