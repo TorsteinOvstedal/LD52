@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Environmnent/Core/Home.gd"
 }, {
+"base": "Node",
+"class": "Path0",
+"language": "GDScript",
+"path": "res://Environmnent/Utils/Path/Path.gd"
+}, {
 "base": "Area",
 "class": "PathMob",
 "language": "GDScript",
@@ -33,6 +38,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Spatial",
+"class": "Point",
+"language": "GDScript",
+"path": "res://Environmnent/Utils/Path/Point.gd"
 }, {
 "base": "Area",
 "class": "SoundSensor",
@@ -48,8 +58,10 @@ _global_script_class_icons={
 "Item": "",
 "Level": "",
 "NutStorage": "",
+"Path0": "",
 "PathMob": "",
 "Player": "",
+"Point": "",
 "SoundSensor": "",
 "SpinAnimation": ""
 }
