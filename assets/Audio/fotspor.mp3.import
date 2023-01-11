@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/fotspor.mp3-0da60ebab7499f5b8c33a72d4e8fcbbf.mp3str"
+path="res://.import/fotspor.mp3-b0c83e441264a927bd1e8276e8e55a00.mp3str"
 
 [deps]
 
-source_file="res://assets/Audio/fotspor.mp3"
-dest_files=[ "res://.import/fotspor.mp3-0da60ebab7499f5b8c33a72d4e8fcbbf.mp3str" ]
+source_file="res://Assets/Audio/fotspor.mp3"
+dest_files=[ "res://.import/fotspor.mp3-b0c83e441264a927bd1e8276e8e55a00.mp3str" ]
 
 [params]
 

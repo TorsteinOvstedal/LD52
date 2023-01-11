@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/bie.glb-343c6c7796870a4c5446ea7da81fc6cd.scn"
+path="res://.import/bie.glb-71131df07bada13736a245bfc8eb5562.scn"
 
 [deps]
 
-source_file="res://assets/Models/Bee/bie.glb"
-dest_files=[ "res://.import/bie.glb-343c6c7796870a4c5446ea7da81fc6cd.scn" ]
+source_file="res://Assets/Models/Bee/bie.glb"
+dest_files=[ "res://.import/bie.glb-71131df07bada13736a245bfc8eb5562.scn" ]
 
 [params]
 

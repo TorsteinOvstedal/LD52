@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/nøtt.glb-cc74e312d9783207c1a151308d5ca7f2.scn"
+path="res://.import/nut.glb-eeacbb4d8ebb79342d06275fc1b00065.scn"
 
 [deps]
 
-source_file="res://assets/Models/Nut/nøtt.glb"
-dest_files=[ "res://.import/nøtt.glb-cc74e312d9783207c1a151308d5ca7f2.scn" ]
+source_file="res://Assets/Models/Nut/nut.glb"
+dest_files=[ "res://.import/nut.glb-eeacbb4d8ebb79342d06275fc1b00065.scn" ]
 
 [params]
 

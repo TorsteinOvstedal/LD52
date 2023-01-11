@@ -56,7 +56,7 @@ func _ready() -> void:
 	# Set paths for path-following mobs
 	$Bee0.set_points($Path0.get_points())
 	$Bee1.set_points($Path1.get_points())
-
+	$Bee2.set_points($Path2.get_points())
 	# Logic signals
 	$CountDown.connect("timeout", self, "_on_countdown_timeout")
 

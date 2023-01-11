@@ -18,7 +18,7 @@ onready var space := get_world().direct_space_state
 
 # Movement
 
-export var speed := 1500.0
+export var speed := 100.0
 var veclocity := Vector3.ZERO
 var direction := Vector3.FORWARD
 

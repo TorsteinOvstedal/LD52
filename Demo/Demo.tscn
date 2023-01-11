@@ -3,7 +3,7 @@
 [ext_resource path="res://Environmnent/Items/Nut.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environmnent/Core/Home.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Models/Bee/bie.glb" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Models/Bee/bie.glb" type="PackedScene" id=4]
 [ext_resource path="res://Proto/Mobs/Vision/Mob.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=7]
@@ -323,13 +323,117 @@ __meta__ = {
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
 
+[node name="Path2" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="Point" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00975, -13, 18.5972 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point3" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40659, -13, 10.343 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point3"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point4" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9942, -13, 10.343 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point4"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point5" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9148, -13, 2.72365 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point5"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point6" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64114, -13, 2.72365 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point6"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point7" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64114, -13, -2.11779 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point7"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point8" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33975, -13, -2.11779 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point8"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point9" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1334, -13, 5.89836 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point9"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point10" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.832, -13, 5.819 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point10"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Point11" type="Spatial" parent="Path2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.832, -13, 18.2798 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Path2/Point11"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
 [node name="Bee0" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68125, -12.7264, 2.11076 )
 collision_layer = 0
 script = ExtResource( 10 )
+loop = true
 
 [node name="Model" parent="Bee0" instance=ExtResource( 4 )]
-transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.62, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bee0"]
 shape = SubResource( 7 )
@@ -340,9 +444,21 @@ collision_layer = 0
 script = ExtResource( 10 )
 
 [node name="Model" parent="Bee1" instance=ExtResource( 4 )]
-transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.62, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bee1"]
+shape = SubResource( 7 )
+
+[node name="Bee2" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9042, -12.7264, 18.6053 )
+collision_layer = 0
+script = ExtResource( 10 )
+loop = true
+
+[node name="Model" parent="Bee2" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.62, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Bee2"]
 shape = SubResource( 7 )
 
 [node name="UI" type="Control" parent="."]
@@ -483,6 +599,7 @@ align = 1
 [connection signal="body_entered" from="Fox/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Bee0" to="." method="_on_Bee0_body_entered"]
 [connection signal="body_entered" from="Bee1" to="." method="_on_Bee1_body_entered"]
+[connection signal="body_entered" from="Bee2" to="." method="_on_Bee1_body_entered"]
 
 [editable path="Player"]
 [editable path="Player/Model"]

@@ -7,8 +7,6 @@ extends Spatial
 
 var sequence := Sequence.new([
 	Turn.RIGHT,
-	Turn.LEFT,
-	Turn.LEFT
 ])
 
 
@@ -58,16 +56,16 @@ func turn() -> void:
 		direction = 0
 
 func _physics_process(delta: float) -> void:
-	# Turning
-	if turning:
-		rotate_y(deg2rad(90*turn))
-		turning = false
-
 	# Facing a wall
-	elif raycast.get_collider():
+	if raycast.get_collider():
 		turning = true
 		turn()
-	
+
+	# Turning
+	if turning:
+		rotate_y(deg2rad(90 * turn))
+		turning = false
+
 	# Walking
 	else:			
 		var velocity = DIRECTIONS[direction] * speed * delta
