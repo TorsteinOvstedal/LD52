@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ld52"
-run/main_scene="res://Proto/Mobs/Vision2/Main.tscn"
+run/main_scene="res://Demo.tscn"
 config/icon="res://Assets/icon.png"
 
 [autoload]

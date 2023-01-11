@@ -132,10 +132,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="GridContainer" type="GridContainer" parent="GameOver/CenterContainer"]
-margin_left = 339.0
-margin_top = 224.0
-margin_right = 685.0
-margin_bottom = 376.0
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
 custom_constants/vseparation = 32
 
 [node name="TitleLabel" type="Label" parent="GameOver/CenterContainer/GridContainer"]
@@ -187,11 +187,11 @@ align = 1
 wait_time = 60.0
 
 [node name="Fox" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3038, -13.8008, -1.62849 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.3038, -13.8008, -1.62849 )
 speed = 5.0
 
 [node name="rev" parent="Fox" index="0"]
-transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="RayCast" parent="Fox" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0857697, 1.98136, 0.797431 )

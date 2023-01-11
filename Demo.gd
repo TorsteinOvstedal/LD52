@@ -5,7 +5,7 @@ onready var carryingLabel = $UI/GridContainer/CarryingLabel
 onready var storageLabel = $UI/GridContainer/StorageLabel
 onready var timeLabel = $UI/TimeLabel
 onready var statusLabel = $GameOver/CenterContainer/GridContainer/StatusLabel
-
+onready var titleLabel = $GameOver/CenterContainer/GridContainer/TitleLabel
 func _ready() -> void:
 	# Set nuts to collect to the number of nuts in the level
 	$Home.capacity = $Nuts.get_children().size()
@@ -68,16 +68,16 @@ func set_carrying_label() -> void:
 # Game state
 
 func game_over(victory: bool) -> void:
-	var text = ""
 	if victory:
-		text = "You collected enough nuts"
+		titleLabel.text = "You collected enough nuts!"
+		statusLabel.text = "Press space to play again"
 	else:
-		text = "You failed to collect enough nuts"
+		titleLabel.text = "Game Over"
+		statusLabel.text = "You failed to collect enough nuts.\nPress space to try again."
 	
 	set_carrying_label()
 	set_storage_label()
 
-	statusLabel.text = text
 	$GameOver.visible = true
 	get_tree().paused = true
 

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Models/Fox/rev.glb" type="PackedScene" id=1]
+[ext_resource path="res://Environmnent/Items/Nut.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Models/Squirrel/ekorn.glb" type="PackedScene" id=3]
+[ext_resource path="res://Environmnent/Mobs/Bee.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0.972549, 0.462745, 0.462745, 1 )
+roughness = 0.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="EnergyDrink" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0.437759, 0.286896, 0 )
+
+[node name="Nut" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68071, 0, 0 )
+
+[node name="Bee" parent="." instance=ExtResource( 4 )]
+transform = Transform( -8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 1.1276, 0, 0 )
+
+[node name="ekorn" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.04636, -0.584101, 0.0590024 )
+
+[node name="rev" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.64537, 0, 0 )
+
+[node name="Cube" parent="rev/Armature/Skeleton" index="0"]
+material/0 = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.753265, -0.451651, 0.478125, 0, 0.726946, 0.686694, -0.657717, 0.517263, -0.547583, 6.71055, 0, 0.760406 )
+
+[editable path="rev"]
