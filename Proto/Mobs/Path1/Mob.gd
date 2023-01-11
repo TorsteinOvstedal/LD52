@@ -23,7 +23,7 @@ class Counter:
 		self._index = 0
 
 	func next() -> int:
-		print(_index)
+		# print(_index)
 		var x = _index
 		_function.call_func()
 		return x

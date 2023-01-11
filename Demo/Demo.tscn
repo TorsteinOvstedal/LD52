@@ -1,37 +1,15 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Demo.gd" type="Script" id=3]
-[ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Environmnent/Items/Nut.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Environmnent/Core/Home.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Proto/Mobs/Vision/Mob.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Models/Bee/bie.glb" type="PackedScene" id=8]
-[ext_resource path="res://Proto/Mobs/Path1/Mob.gd" type="Script" id=9]
-[ext_resource path="res://Proto/Mobs/Vision2/Mob.gd" type="Script" id=10]
-[ext_resource path="res://UI.gd" type="Script" id=11]
-
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://Assets/fonts/Rowdies-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=2]
-size = 64
-outline_size = 12
-outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
-font_data = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-outline_size = 12
-outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
-font_data = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 42
-outline_size = 6
-outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
-font_data = SubResource( 1 )
+[ext_resource path="res://Environmnent/Items/Nut.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environmnent/Core/Home.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Models/Bee/bie.glb" type="PackedScene" id=4]
+[ext_resource path="res://Proto/Mobs/Vision/Mob.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environmnent/Items/EnergyDrink.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Demo/UI.gd" type="Script" id=8]
+[ext_resource path="res://Demo/Demo.gd" type="Script" id=9]
+[ext_resource path="res://Proto/Mobs/Path1/Mob.gd" type="Script" id=10]
 
 [sub_resource type="BoxShape" id=8]
 
@@ -45,148 +23,122 @@ albedo_color = Color( 1, 0, 0, 1 )
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 1.2, 1, 1.2 )
 
-[sub_resource type="SphereShape" id=9]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/Rowdies-Regular.ttf"
 
-[sub_resource type="SpatialMaterial" id=10]
-albedo_color = Color( 1, 0, 0.792157, 1 )
+[sub_resource type="DynamicFont" id=3]
+size = 42
+outline_size = 6
+outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
+font_data = SubResource( 1 )
 
-[sub_resource type="SphereMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="DynamicFont" id=9]
+size = 72
+outline_size = 4
+outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 42
+outline_size = 4
+outline_color = Color( 0.776471, 0.207843, 0.207843, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://Assets/fonts/Rowdies-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 42
+outline_size = 4
+outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
+extra_spacing_bottom = 8
+font_data = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 12
+outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 12
+outline_color = Color( 0.207843, 0.776471, 0.427451, 1 )
+font_data = SubResource( 1 )
 
 [node name="Spatial" type="Spatial"]
-script = ExtResource( 3 )
+script = ExtResource( 9 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="CountDown" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0013, -11.9994, -8.01885 )
 speed = 1500.0
-capacity = 10
 
-[node name="Labyrint" parent="." instance=ExtResource( 1 )]
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 28.0374, 0 )
+
+[node name="Labyrint" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.81046, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.875055, -0.454109, 0.167526, -0.460618, -0.887598, 6.86374e-09, 0.148696, -0.0771655, -0.985868, 0, 0, 0 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 28.0374, 0 )
+[node name="Home" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3.99611, 0.0505306, 0.169025, -0.094448, 3.8497, 1.08207, -0.149004, -1.08501, 3.84715, 6.34074, -17.3773, -21.3639 )
 
 [node name="Nuts" type="Node" parent="."]
 
-[node name="Nut" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.8161, -1.19889, 0, 1.19889, 3.8161, 0, 0, 0, 4, -38.1021, -12.5, 17.2258 )
 
-[node name="Nut2" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut2" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.75272, 0, 1.3846, 0.558019, 3.66077, -1.51241, -1.26717, 1.61207, 3.43446, -38.1021, -12.5, -5.32225 )
 
-[node name="Nut3" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut3" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.9994, 0, -0.0691116, -0.0206465, 3.81734, -1.19479, 0.0659555, 1.19496, 3.81677, -10.2017, -12.5, -17.8029 )
 
-[node name="Nut4" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut4" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 2.96608, 2.68373, 0, -2.68373, 2.96608, 0, 0, 0, 4, -10.2017, -12.5, 10.1791 )
 
-[node name="Nut5" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut5" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.98066, 0.392833, 0, -0.392833, 3.98066, 0, 0, 0, 4, -18.115, -12.5, -1.4869 )
 
-[node name="Nut6" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut6" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.69605, -1.52944, 0, 1.50555, 3.63832, 0.704216, -0.269265, -0.650705, 3.93752, 13.7012, -12.5, -2.13955 )
 
-[node name="Nut7" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut7" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 18.3513, -12.5, 18.0923 )
 
-[node name="Nut8" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut8" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.72504, 1.45743, 0, -1.41891, 3.6266, -0.913471, -0.332829, 0.850679, 3.8943, 22.0139, -12.5, -17.6461 )
 
-[node name="Nut9" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut9" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.72863, -0.964832, -1.08001, 0.631022, 3.76733, -1.18702, 1.30351, 0.936115, 3.66395, 29.7832, -12.5, -17.6461 )
 
-[node name="Nut10" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut10" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 37.8853, -12.5, -17.6461 )
 
-[node name="Nut11" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut11" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.93812, 0.511102, -0.479554, -0.495395, 3.96603, 0.158733, 0.495764, -0.0968849, 3.96798, 37.8853, -12.5, 6.21651 )
 
-[node name="Nut12" parent="Nuts" instance=ExtResource( 5 )]
+[node name="Nut12" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 25.3436, -12.5, 6.21651 )
 
 [node name="EnergyDrinks" type="Node" parent="."]
 
-[node name="EnergyDrink" parent="EnergyDrinks" instance=ExtResource( 4 )]
+[node name="EnergyDrink" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -25.756, -12.2117, -5.89961 )
 
-[node name="EnergyDrink3" parent="EnergyDrinks" instance=ExtResource( 4 )]
+[node name="EnergyDrink3" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 34.0965, -12.2117, -13.7975 )
 
-[node name="EnergyDrink4" parent="EnergyDrinks" instance=ExtResource( 4 )]
+[node name="EnergyDrink4" parent="EnergyDrinks" instance=ExtResource( 7 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 1.86162, -12.2117, 25.5194 )
 
-[node name="Home" parent="." instance=ExtResource( 6 )]
-transform = Transform( 3.99611, 0.0505306, 0.169025, -0.094448, 3.8497, 1.08207, -0.149004, -1.08501, 3.84715, 6.34074, -17.3773, -21.3639 )
-
-[node name="GameOver" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="CenterContainer" type="CenterContainer" parent="GameOver"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="GridContainer" type="GridContainer" parent="GameOver/CenterContainer"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
-custom_constants/vseparation = 32
-
-[node name="TitleLabel" type="Label" parent="GameOver/CenterContainer/GridContainer"]
-margin_right = 346.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
-text = "Game Over"
-align = 1
-
-[node name="StatusLabel" type="Label" parent="GameOver/CenterContainer/GridContainer"]
-margin_top = 112.0
-margin_right = 346.0
-margin_bottom = 152.0
-custom_fonts/font = SubResource( 4 )
-text = "asdfasdfasdfasdf"
-align = 1
-
-[node name="UI" type="Control" parent="."]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 11 )
-
-[node name="TimeLabel" type="Label" parent="UI"]
-anchor_right = 1.0
-margin_top = 15.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-
-[node name="GridContainer" type="GridContainer" parent="UI"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 40.0
-margin_bottom = 167.0
-
-[node name="CarryingLabel" type="Label" parent="UI/GridContainer"]
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-
-[node name="StorageLabel" type="Label" parent="UI/GridContainer"]
-margin_top = 57.0
-margin_bottom = 110.0
-custom_fonts/font = SubResource( 3 )
-align = 1
-
-[node name="CountDown" type="Timer" parent="."]
-wait_time = 60.0
-
-[node name="Fox" parent="." instance=ExtResource( 7 )]
+[node name="Fox" parent="." instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.3038, -13.8008, -1.62849 )
 speed = 5.0
 
@@ -204,8 +156,7 @@ collision_layer = 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 1.11469, 1.42817 )
 shape = SubResource( 8 )
 
-[node name="Path0" type="Spatial" parent="."]
-visible = false
+[node name="Path0" type="Node" parent="."]
 
 [node name="Point" type="Spatial" parent="Path0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73286, -13, 2 )
@@ -307,8 +258,7 @@ __meta__ = {
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
 
-[node name="Path1" type="Spatial" parent="."]
-visible = false
+[node name="Path1" type="Node" parent="."]
 
 [node name="Point" type="Spatial" parent="Path1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.032, -13, 17.7805 )
@@ -373,9 +323,9 @@ material/0 = SubResource( 6 )
 [node name="Bee0" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68125, -12.7264, 2.11076 )
 collision_layer = 0
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="Model" parent="Bee0" instance=ExtResource( 8 )]
+[node name="Model" parent="Bee0" instance=ExtResource( 4 )]
 transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bee0"]
@@ -384,25 +334,133 @@ shape = SubResource( 7 )
 [node name="Bee1" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1382, -12.7264, 17.3914 )
 collision_layer = 0
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="Model" parent="Bee1" instance=ExtResource( 8 )]
+[node name="Model" parent="Bee1" instance=ExtResource( 4 )]
 transform = Transform( 5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0, 0.611956, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Bee1"]
 shape = SubResource( 7 )
 
-[node name="KinematicBody" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, -11.7639, 2.00425 )
-collision_layer = 4
-collision_mask = 9
-script = ExtResource( 10 )
+[node name="UI" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
 
-[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-shape = SubResource( 9 )
+[node name="TimeLabel" type="Label" parent="UI"]
+anchor_right = 1.0
+margin_top = 15.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 3 )
+align = 1
 
-[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
-mesh = SubResource( 11 )
+[node name="GridContainer" type="GridContainer" parent="UI"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 167.0
+
+[node name="CarryingLabel" type="Label" parent="UI/GridContainer"]
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
+[node name="StorageLabel" type="Label" parent="UI/GridContainer"]
+margin_top = 57.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
+[node name="Info" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.47451 )
+
+[node name="Title" type="Label" parent="UI/Info"]
+anchor_top = 0.116
+anchor_right = 1.0
+anchor_bottom = 0.116
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 9 )
+text = "Nut Mania"
+align = 1
+
+[node name="Description" type="Label" parent="UI/Info"]
+anchor_top = 0.376
+anchor_right = 1.0
+anchor_bottom = 0.376
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 10 )
+text = "Collect every nut and store them
+in your tree before the time runs out."
+align = 1
+valign = 1
+
+[node name="Controls" type="Label" parent="UI/Info"]
+anchor_top = 0.822
+anchor_right = 1.0
+anchor_bottom = 0.822
+margin_top = -109.0
+custom_fonts/font = SubResource( 12 )
+text = "Controls: WASD & SPACE.
+Press SPACE to start!"
+align = 1
+
+[node name="PauseScreen" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/PauseScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.47451 )
+
+[node name="Title2" type="Label" parent="UI/PauseScreen"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -45.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 9 )
+text = "PAUSED"
+align = 1
+
+[node name="GameOver" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="GameOver/CenterContainer"]
+margin_left = 339.0
+margin_top = 224.0
+margin_right = 685.0
+margin_bottom = 376.0
+custom_constants/vseparation = 32
+
+[node name="TitleLabel" type="Label" parent="GameOver/CenterContainer/GridContainer"]
+margin_right = 346.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Game Over"
+align = 1
+
+[node name="StatusLabel" type="Label" parent="GameOver/CenterContainer/GridContainer"]
+margin_top = 112.0
+margin_right = 346.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 4 )
+text = "asdfasdfasdfasdf"
+align = 1
 
 [connection signal="body_entered" from="Fox/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Bee0" to="." method="_on_Bee0_body_entered"]

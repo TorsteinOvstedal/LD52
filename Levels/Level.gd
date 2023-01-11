@@ -18,5 +18,6 @@ onready var nuts: Spatial = $Nuts
 func _ready():
 	assert(player_start != null and home != null and nuts != null)
 
-	print("[DEBUG] Nuts in the level: ", str(nuts.get_child_count()))
-	print("[DEBUG] Storage capacity:  ", str(home.capacity))
+	# print("[DEBUG] Nuts in the level: ", str(nuts.get_child_count()))
+	# print("[DEBUG] Storage capacity:  ", str(home.capacity))
+	pass
