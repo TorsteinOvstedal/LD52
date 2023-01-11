@@ -65,6 +65,8 @@ func _ready() -> void:
 
 	$Player.connect("collected_nut", self, "_on_collected_nut")
 	$Player.connect("deposited_nuts", self, "_on_deposited_nuts")
+	
+	$MusicPlayer.play()
 
 	start()
 		

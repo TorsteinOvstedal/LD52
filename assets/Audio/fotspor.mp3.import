@@ -11,5 +11,5 @@ dest_files=[ "res://.import/fotspor.mp3-b0c83e441264a927bd1e8276e8e55a00.mp3str"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

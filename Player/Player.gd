@@ -5,6 +5,9 @@ class_name Player
 signal collected_nut()
 signal deposited_nuts()
 
+onready var asp0 := $RunAudioPlayer
+var asp0_timestamp := 0.0
+
 # Movement speed
 export var speed := 1000.0
 
@@ -47,6 +50,15 @@ func move(x: int, z: int) -> void:
 	else:
 		$Model/AnimationPlayer.stop(true)
 
+func play_walk_sound() -> void:
+	if not asp0.playing:
+		asp0.play(asp0_timestamp)
+
+func stop_walk_sound() -> void:
+	if asp0.playing:
+		asp0_timestamp = asp0.get_playback_position()
+		asp0.stop()
+
 # TODO: Some momentum / speed-buildup 
 
 var _direction := Vector3.ZERO
@@ -56,12 +68,14 @@ var _nuts      := 0
 # TODO: Smooth animation
 
 func _process(_delta):	
-	# Rotate towards direction of movement
-	if _direction.length() > 0:
+	if _direction.length_squared() > 0:
 		look_at(global_transform.origin + _direction, Vector3.UP)
+		play_walk_sound()
+	else:
+		stop_walk_sound()
 
 func _physics_process(delta):
 	_velocity = _direction * speed * delta
 	_velocity.y -= 9.8 * 50 * delta
-	move_and_slide(_velocity, Vector3.UP)
+	_velocity = move_and_slide(_velocity, Vector3.UP)		
 	_direction = Vector3.ZERO
