@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area",
+"class": "Bee",
+"language": "GDScript",
+"path": "res://Environmnent/Mobs/Bee.gd"
+}, {
+"base": "Area",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Environmnent/Items/Item.gd"
@@ -27,22 +32,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Path0",
 "language": "GDScript",
-"path": "res://Environmnent/Utils/Path/Path.gd"
-}, {
-"base": "Area",
-"class": "PathMob",
-"language": "GDScript",
-"path": "res://Proto/Mobs/Path1/Mob.gd"
+"path": "res://Environmnent/Path/Path.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
-}, {
-"base": "Spatial",
-"class": "Point",
-"language": "GDScript",
-"path": "res://Environmnent/Utils/Path/Point.gd"
 }, {
 "base": "Area",
 "class": "SoundSensor",
@@ -55,13 +50,12 @@ _global_script_classes=[ {
 "path": "res://Environmnent/Utils/SpinAnimation.gd"
 } ]
 _global_script_class_icons={
+"Bee": "",
 "Item": "",
 "Level": "",
 "NutStorage": "",
 "Path0": "",
-"PathMob": "",
 "Player": "",
-"Point": "",
 "SoundSensor": "",
 "SpinAnimation": ""
 }
@@ -69,13 +63,13 @@ _global_script_class_icons={
 [application]
 
 config/name="NutMania"
-run/main_scene="res://Demo/Demo.tscn"
+run/main_scene="res://Demo/Paths/Main.tscn"
 boot_splash/show_image=false
 config/icon="res://Assets/icon.png"
 
 [autoload]
 
-Globals="*res://Demo/Globals.gd"
+Globals="*res://Demo/V0/Globals.gd"
 
 [debug]
 

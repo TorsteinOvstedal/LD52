@@ -1,5 +1,6 @@
 extends Area
-class_name PathMob
+
+class_name Bee
 
 # TODO
 # - Support tracing subranges of a path.
@@ -18,16 +19,18 @@ export var tresh_hold := 1.0
 
 export var speed := 20.0
 
-var path: Path0
+var path
+
 var counter: Counter
 var target: Vector3
 
 func _ready() -> void:	
 	path = get_node(path_to_path)
 	
-	assert(path is Path0, "Invalid target %s. Required: %s." % [path.get_class(), Path0])
+	# FIXME
+	# assert(path is Path0, "Invalid target %s. Required: %s." % [path.get_class(), Path0])
 
-	var path_length := path.get_points().size()
+	var path_length = path.get_points().size()
 	
 	assert(start_point < path_length, "Invalid start point.")
 	
