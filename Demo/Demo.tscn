@@ -434,10 +434,11 @@ mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
 
 [node name="Bee0" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68125, -12.7264, 2.11076 )
+transform = Transform( -0.782197, 0.60948, -0.129234, 0, 0.207428, 0.97825, 0.623031, 0.765184, -0.162249, -0.195126, 1.47703, -0.244975 )
 collision_layer = 0
 script = ExtResource( 10 )
-loop = true
+path_to_path = NodePath("../Path0")
+teleport_to_start = true
 
 [node name="Model" parent="Bee0" instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.62, 0 )
@@ -446,9 +447,11 @@ transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0
 shape = SubResource( 7 )
 
 [node name="Bee1" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1382, -12.7264, 17.3914 )
+transform = Transform( -0.414906, 0.264333, -0.870621, 0, 0.956869, 0.290519, 0.909864, 0.120538, -0.397011, -1.49178, 0.497793, -0.680263 )
 collision_layer = 0
 script = ExtResource( 10 )
+path_to_path = NodePath("../Path1")
+teleport_to_start = true
 
 [node name="Model" parent="Bee1" instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.62, 0 )
@@ -457,9 +460,11 @@ transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0
 shape = SubResource( 7 )
 
 [node name="Bee2" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9042, -12.7264, 18.6053 )
+transform = Transform( -0.994803, -0.0572786, 0.0841755, 0, 0.826747, 0.562573, -0.101815, 0.55965, -0.822451, 0.131661, 0.879933, -1.28641 )
 collision_layer = 0
 script = ExtResource( 10 )
+path_to_path = NodePath("../Path2")
+teleport_to_start = true
 loop = true
 
 [node name="Model" parent="Bee2" instance=ExtResource( 4 )]

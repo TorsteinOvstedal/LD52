@@ -85,7 +85,6 @@ onready var game_over := GameOverScreen.new(
 	$GameOverScreen/CenterContainer/GridContainer/Status
 )
 
-
 onready var _game := get_parent()
 
 func reload() -> void:

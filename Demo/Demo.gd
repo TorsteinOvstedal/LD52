@@ -50,18 +50,7 @@ func update_hud_storage() -> void:
 func update_hud_carrying() -> void:
 	$UI.hud.carrying($Player.nuts(), $Player.capacity)
 
-# Setup 
-
 func _ready() -> void:	
-
-	# FIXME: This should be configurable in the editor.
-
-	# Set paths for path-following mobs
-	$Bee0.set_points($Path0.get_points())
-	$Bee1.set_points($Path1.get_points())
-	$Bee2.set_points($Path2.get_points())
-
-	# Logic signals
 	$CountDown.connect("timeout", self, "_on_countdown_timeout")
 
 	$Home.connect("full", self, "_on_full_storage")
