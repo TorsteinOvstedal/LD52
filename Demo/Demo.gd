@@ -19,6 +19,8 @@ func start() -> void:
 	update_hud_carrying()
 	update_hud_storage()
 
+	$MusicPlayer.play(Globals.music_stop_position)
+
 	# Start
 	$CountDown.start()
 
@@ -59,6 +61,7 @@ func _ready() -> void:
 	$Player.connect("collected_nut", self, "_on_collected_nut")
 	$Player.connect("deposited_nuts", self, "_on_deposited_nuts")
 	
+	$MusicPlayer.connect("finished", self, "_on_music_finished")
 	$MusicPlayer.play()
 
 	start()
@@ -91,6 +94,9 @@ func _on_full_storage() -> void:
 
 func _on_countdown_timeout() -> void:
 	game_over(false)
+
+func _on_music_finished() -> void:
+	$MusicPlayer.play(0.0)
 
 # TODO: Re-think mob collision handling 
 

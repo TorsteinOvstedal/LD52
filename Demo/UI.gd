@@ -87,10 +87,20 @@ onready var game_over := GameOverScreen.new(
 
 onready var _game := get_parent()
 
+# FIXME
+
 func reload() -> void:
+	# Reloading leads to a moment without music.
+	# Can be avoided in a later system.
+	var music_player = _game.get_node("MusicPlayer")
+	if music_player.playing:
+		Globals.music_stop_position = music_player.get_playback_position()
+		music_player.stop()
+	
+	Globals.reloads += 1
+	
 	get_tree().reload_current_scene()
 	get_tree().paused = false
-	Globals.reloads += 1
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("play"):
@@ -100,3 +110,4 @@ func _process(delta: float) -> void:
 			pause.toggle()		
 		else:
 			reload()
+			
