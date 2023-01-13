@@ -106,7 +106,7 @@ transform = Transform( 3.8161, -1.19889, 0, 1.19889, 3.8161, 0, 0, 0, 4, -38.102
 transform = Transform( 3.75272, 0, 1.3846, 0.558019, 3.66077, -1.51241, -1.26717, 1.61207, 3.43446, -38.1021, -12.5, -5.32225 )
 
 [node name="Nut3" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 3.9994, 0, -0.0691116, -0.0206465, 3.81734, -1.19479, 0.0659555, 1.19496, 3.81677, -10.2017, -12.5, -17.8029 )
+transform = Transform( 3.04196, -1.36847, 2.20767, 1.85416, 3.52496, -0.36984, -1.81895, 1.30459, 3.31504, -10.2017, -12.5, -17.8029 )
 
 [node name="Nut4" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 2.96608, 2.68373, 0, -2.68373, 2.96608, 0, 0, 0, 4, -10.2017, -12.5, 10.1791 )
@@ -115,25 +115,25 @@ transform = Transform( 2.96608, 2.68373, 0, -2.68373, 2.96608, 0, 0, 0, 4, -10.2
 transform = Transform( 3.98066, 0.392833, 0, -0.392833, 3.98066, 0, 0, 0, 4, -18.115, -12.5, -1.4869 )
 
 [node name="Nut6" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 3.69605, -1.52944, 0, 1.50555, 3.63832, 0.704216, -0.269265, -0.650705, 3.93752, 13.7012, -12.5, -2.13955 )
+transform = Transform( 3.96129, -0.523577, 0.184365, 0.485406, 3.91183, 0.679654, -0.269265, -0.650705, 3.93752, 13.7012, -12.5, -2.13955 )
 
 [node name="Nut7" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 18.3513, -12.5, 18.0923 )
+transform = Transform( 4, 0, 0, 0, 3.72945, 1.44611, 0, -1.44611, 3.72945, 18.3513, -12.5, 18.0923 )
 
 [node name="Nut8" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 3.72504, 1.45743, 0, -1.41891, 3.6266, -0.913471, -0.332829, 0.850679, 3.8943, 22.0139, -12.5, -17.6461 )
 
 [node name="Nut9" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 3.72863, -0.964832, -1.08001, 0.631022, 3.76733, -1.18702, 1.30351, 0.936115, 3.66395, 29.7832, -12.5, -17.6461 )
+transform = Transform( 3.47001, -1.83669, -0.765248, 1.5033, 3.42786, -1.41061, 1.30351, 0.936115, 3.66395, 29.7832, -12.5, -17.6461 )
 
 [node name="Nut10" parent="Nuts" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 37.8853, -12.5, -17.6461 )
 
 [node name="Nut11" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 3.93812, 0.511102, -0.479554, -0.495395, 3.96603, 0.158733, 0.495764, -0.0968849, 3.96798, 37.8853, -12.5, 6.21651 )
+transform = Transform( 3.16524, 1.70265, 1.75563, -1.677, 3.60108, -0.468935, -1.78015, -0.364976, 3.56341, 37.8853, -12.5, 6.21651 )
 
 [node name="Nut12" parent="Nuts" instance=ExtResource( 1 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 25.3436, -12.5, 6.21651 )
+transform = Transform( 3.54985, -0.993408, 1.55296, 1.07797, 3.85201, 0, -1.4955, 0.418509, 3.68623, 25.3436, -12.5, 6.21651 )
 
 [node name="EnergyDrinks" type="Node" parent="."]
 
