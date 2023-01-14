@@ -7,11 +7,10 @@ albedo_color = Color( 1, 0, 0, 1 )
 material = SubResource( 1 )
 radius = 0.5
 height = 1.0
+radial_segments = 8
+rings = 4
 
-[node name="Spatial" type="Spatial"]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Point" type="Spatial"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Model" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
