@@ -69,13 +69,13 @@ _global_script_class_icons={
 [application]
 
 config/name="NutMania"
-run/main_scene="res://Demo/Demo.tscn"
+run/main_scene="res://Demo/Paths/Main.tscn"
 boot_splash/show_image=false
 config/icon="res://Assets/icon.png"
 
 [autoload]
 
-Globals="*res://Demo/Globals.gd"
+Globals="*res://Demo/V0/Globals.gd"
 
 [debug]
 
