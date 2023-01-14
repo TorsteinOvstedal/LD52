@@ -15,7 +15,7 @@ capacity = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.810863, 0 )
 shape = SubResource( 3 )
 
-[node name="ekorntre" parent="." instance=ExtResource( 2 )]
+[node name="Model" parent="." instance=ExtResource( 2 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
